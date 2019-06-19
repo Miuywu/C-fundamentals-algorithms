@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-int integ; 
+int integ;
 long intLong;
 double intLL;
 char chara;
