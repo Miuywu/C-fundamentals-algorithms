@@ -6,6 +6,6 @@
  */
 int main(void)
 {
-	printf("Size of a char\: 1 bytes\(s\)\nSize of int: 1 byte\(s\)\nSize of a long int\: 8 byte\(s\)\nSize of a long long int\: 8 byte\(s\)\nSize of a float\: 4 byte\(s\)");
+	printf("Size of a char\: sizeof(char) bytes\(s\)\nSize of int: sizeof(int) byte\(s\)\nSize of a long int\: sizeof(long int) byte\(s\)\nSize of a long long int\: sizeof(long long int) byte\(s\)\nSize of a float\: sizeof(float) byte\(s\)");
 	return (0);
 }
