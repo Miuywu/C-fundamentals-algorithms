@@ -21,9 +21,9 @@ int main(void)
 
 	if (ldigit > 5)
 		printf(" and is greater than 5");
-	else if (ldigit < 6 && ldigit != 0)
+	if (ldigit < 6 && ldigit != 0)
 		printf(" and is less than 6 and not 0");
-	else if (ldigit == 0)
+	if (ldigit == 0)
 		printf(" and is 0");
 	printf("\n");
 
