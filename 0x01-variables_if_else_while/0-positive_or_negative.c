@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * main - tells if n is greater than, less than or equal to 0
+ * main - Entry point
  *
- * returns 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
