@@ -9,9 +9,11 @@
 */
 int main(void)
 {
-	for (dig = 0; dig <= 9; dig++)
+	int i;
+
+	for (i = 48; i <= 57; i++)
 	{
-		putchar ('dig');
+		putchar (i);
 	}
 	putchar ('\n');
 
