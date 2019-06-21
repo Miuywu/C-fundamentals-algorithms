@@ -11,11 +11,7 @@ int main(void)
 {
 	int n;
 	int ldigit;
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 584f312e8556b4cbadd3e27bd7d7803591c1bd16
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
