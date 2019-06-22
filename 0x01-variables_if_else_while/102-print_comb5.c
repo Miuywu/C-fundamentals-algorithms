@@ -1,41 +1,36 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
-* main - prints 00-89 with some exceptions
-*
-* Return: Always 0 (Success)
-*/
+ * main - Prints all possible combinations of a pair of
+ * two digit numbers, without any repetition.
+(*
+ * Return: 0 on success.
+ */
+
 int main(void)
 {
-	int i;
-	int j;
-	int k;
-	int l;
+	int i, j;
 
-	for (i = '0'; i <= '9'; i++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (j = '0'; j <= '9'; j++)
+		for (j = 0; j <= 99; j++)
 		{
-			for (k = i; k <= '9'; k++)
+			if (i < j && i != j)
 			{
-				for (l = j + 1; l <= '9'; l++)
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
+				putchar(' ');
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
+				if (i != 98 || j != 99)
 				{
-					putchar (i);
-					putchar (j);
-					putchar (32);
-					putchar (k);
-					putchar (l);
-					if (i != '9' || j != '8')
-					{
-						putchar (44);
-						putchar (32);
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
 	}
-	putchar ('\n');
+	putchar('\n');
 	return (0);
 }
