@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
-* main - prints 00-89 with some exceptions 
+* main - prints 00-89 with some exceptions
 *
 * Return: Always 0 (Success)
 */

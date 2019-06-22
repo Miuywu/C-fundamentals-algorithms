@@ -12,20 +12,26 @@ int main(void)
 	int i;
 	int j;
 	int k;
+	int l;
 
 	for (i = '0'; i <= '9'; i++)
 	{
-		for (j = i + 1; j <= '9'; j++)
+		for (j = '0'; j <= '9'; j++)
 		{
-			for (k = j + 1; k <= '9'; k++)
+			for (k = i; k <= '9'; k++)
 			{
-				putchar (i);
-				putchar (j);
-				putchar (k);
-				if (i != '8' || j != '9')
+				for (l = j + 1; l <= '9'; l++)
 				{
-					putchar (44);
+					putchar (i);
+					putchar (j);
 					putchar (32);
+					putchar (k);
+					putchar (l);
+					if (i != '9' || j != '8')
+					{
+						putchar (44);
+						putchar (32);
+					}
 				}
 			}
 		}
