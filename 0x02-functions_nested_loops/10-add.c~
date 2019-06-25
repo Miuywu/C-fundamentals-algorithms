@@ -1,0 +1,14 @@
+#include "holberton.h"
+
+/**
+ * add - returns sum of parameters
+ *
+ * Return: sum of parameters
+ */
+
+int add(int tena, int tenb)
+{
+	int a;
+	a = tena + tenb;
+	return (a);
+}

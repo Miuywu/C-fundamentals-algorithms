@@ -1,0 +1,45 @@
+#include "holberton.h"
+#include <stdio.h>
+
+/**
+ * print_last_digit - prints last digit of int
+ *
+ * Return: value of last digit
+ */
+
+void print_to_98(int n)
+{
+	if (n < 98)
+	{
+		while (n <= 98)
+		{
+			if (n != 98)
+			{
+				printf("%d", n);
+				printf(",");
+				printf(" ");
+			}
+			else
+				printf("%d", n);
+			n++;
+		}
+	}
+	else if (n == 98)
+		printf("98");
+	else
+	{
+		while (n >= 98)
+		{
+			if (n != 98)
+			{
+				printf("%d", n);
+				printf(",");
+				printf(" ");
+			}
+			else
+				printf("%d", n);
+			n--;
+		}
+	}
+	printf("\n");
+}
