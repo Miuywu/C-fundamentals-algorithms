@@ -11,9 +11,9 @@ int print_last_digit(int sev)
 {
 	int mod;
 
-	if (sev < 0)
-		sev = sev * -1;
 	mod = sev % 10;
+	if (mod < 0)
+		mod = mod * -1;
 	_putchar(mod + '0');
 	return (mod);
 }
