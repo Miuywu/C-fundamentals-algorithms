@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	printf ("50829599\n");
+	printf("50829599\n");
 	return (0);
 }
