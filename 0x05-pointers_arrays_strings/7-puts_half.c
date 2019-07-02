@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+
 /**
  * puts_half - reverses input str
  *
@@ -10,6 +11,7 @@ void puts_half(char *str)
 {
 	int c = 0;
 	int d;
+	int n;
 
 	while (str[c] != '\0')
 	{
@@ -17,10 +19,22 @@ void puts_half(char *str)
 	}
 	d = c / 2;
 
-	while (d < c)
+	if (c % 2 == 0)
 	{
-		_putchar(str[d]);
-		d++;
+		while (d < c)
+		{
+			_putchar(str[d]);
+			d++;
+		}
+	}
+	else 
+	{
+		n = (c - 1) / 2;
+		while (n < c)
+		{
+			_putchar(str[n]);
+			n++;
+		}
 	}
 	_putchar('\n');
 }
