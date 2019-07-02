@@ -27,7 +27,7 @@ void puts_half(char *str)
 			d++;
 		}
 	}
-	else 
+	else
 	{
 		n = (c - 1) / 2;
 		while (n < c)
