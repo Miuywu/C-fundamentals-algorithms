@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * _strcpy - prints n elements of an array
+ * *_strcpy - prints n elements of an array
  *
  * Return: null
  * @src: array
- * @dst: array size
+ * @dest: array size
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -17,7 +17,6 @@ char *_strcpy(char *dest, char *src)
 	{
 		c++;
 	}
-	c++;
 
 	while (d <= c)
 	{
