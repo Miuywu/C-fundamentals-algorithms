@@ -1,13 +1,21 @@
 #include "holberton.h"
 
-
 /**
- * reset_to_98 - sets *n to 98
+ * _strcat - concat 2 strs
  *
  * Return: null
- * @n: input
+ * @src: input
+ * @dest: out
  */
-void reset_to_98(int *n)
+char *_strcat(char *dest, char *src)
 {
-	*n = 98;
+	int a;
+	int b;
+
+	a = 0;
+	while (dest[a] >= 32 && dest[a] <= 126)
+		a++;
+	for (b = 0; *(src + b) != '\0'; b++)
+		*(dest + a + b) = *(src + b);
+	return (dest);
 }
