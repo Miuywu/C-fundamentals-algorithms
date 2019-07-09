@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 	char *a = accept;
 	int b;
 
-	while (*s != ',')
+	while ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z'))
 	{
 		for (b = 0; a[b] != '\0'; b++)
 			if (a[b] == *s)
