@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * int _strlen_recursion - returns str len
+ * _strlen_recursion - returns str len
  * Return: NULL
  * @s: pointer to array of chars
  */
