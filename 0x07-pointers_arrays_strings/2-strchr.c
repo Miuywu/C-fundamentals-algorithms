@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdlib.h>
 /**
  * *_strchr - locates char c in char array s
  *
@@ -9,10 +9,12 @@
  */
 char *_strchr(char *s, char c)
 {
-	unsigned int a;
- 
-	for (a = 0; s[a] != '\0'; a++, ++s)
+	int a;
+	for (a = 0; s[a] != '\0'; a++, s++)
 		if (s[a] == c)
-			return (s + 1);
-	return ('\0');
+			return (s);
+	if (*s == c)
+		return (s);
+	else
+		return (NULL);
 }
