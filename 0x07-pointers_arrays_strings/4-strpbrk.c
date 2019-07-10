@@ -21,6 +21,6 @@ char *_strpbrk(char *s, char *accept)
 			if (*(h + a) == *(n + b))
 				return (&h[a]);
 		}
-	} 
+	}
 	return (0);
-} 
+}
