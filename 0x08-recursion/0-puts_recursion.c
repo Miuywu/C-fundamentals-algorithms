@@ -4,7 +4,6 @@
  * _puts_recursion - prints a string, followed by a new line
  *
  * Return: NULL
- * 
  * @s: pointer to array of chars
  */
 void _puts_recursion(char *s)
