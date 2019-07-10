@@ -28,14 +28,14 @@ char *_strstr(char *haystack, char *needle)
 			for (a = 0; *(h + a) != '\0'; a++)
 			{
 				for (b = 0; *(n + b) != '\0'; b++)
-				{ 
+				{
 					for (c = 0; *(h + a + c) == *(n + b + c); c++)
 						;
 					if (c == needlelen)
 						return (&h[a - 1]);
 				}
-			} 
+			}
 			return (0);
 		}
-	} 
-} 
+	}
+}
