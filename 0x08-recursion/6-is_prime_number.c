@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * xUp - increments x for x^2
+ * pass - increments x for x^2
  *
  * @n: intput
  * @x: square root
