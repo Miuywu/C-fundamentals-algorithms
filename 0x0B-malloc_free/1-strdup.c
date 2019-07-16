@@ -24,7 +24,7 @@ char *_strdup(char *str)
 	/* checks if malloc was successful*/
 	if (array == NULL)
 		return (NULL);
- 	for (a = 0; a < strSize; a++)
+	for (a = 0; a < strSize; a++)
 		array[a] = str[a];
 	array[a] = '\0';
 	return (array);
