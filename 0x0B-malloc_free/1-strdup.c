@@ -22,12 +22,9 @@ char *_strdup(char *str)
 		strSize++;
 	array = malloc(strSize * sizeof(char));
 	/* checks if malloc was successful*/
-	if (array != NULL)
-	{
-		for (a = 0; a < strSize; a++)
-			array[a] = str[a];
-		return (array);
-	}
-	else
+	if (array == NULL)
 		return (NULL);
+	for (a = 0; a < strSize; a++)
+		array[a] = str[a];
+	return (array);
 }
