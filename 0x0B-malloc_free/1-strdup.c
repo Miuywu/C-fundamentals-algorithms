@@ -20,11 +20,12 @@ char *_strdup(char *str)
 	strSize = 0;
 	while (str[strSize] != '\0')/* finds len of str */
 		strSize++;
-	array = malloc(strSize * sizeof(char));
+	array = malloc(strSize + 1 * sizeof(char));
 	/* checks if malloc was successful*/
 	if (array == NULL)
 		return (NULL);
-	for (a = 0; a < strSize; a++)
+ 	for (a = 0; a < strSize; a++)
 		array[a] = str[a];
+	array[a] = '\0';
 	return (array);
 }
