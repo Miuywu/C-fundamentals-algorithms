@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 	}
 
 	/*malloc*/
-	array = malloc(c * (sizeof(char *)));
+	array = malloc(c + 1 * (sizeof(char *)));
 
 	/*malloc check*/
 	if (array == NULL)
@@ -44,5 +44,6 @@ char *argstostr(int ac, char **av)
 		array[c] = '\n';
 		c++;
 	}
+	array[c] = '\0';
 	return (array);
 }
