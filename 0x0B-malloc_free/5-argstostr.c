@@ -12,7 +12,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *array; /*pointer to 2d array*/
-	int a,b,c;/*loopers*/
+	int a, b, c;/*loopers*/
 
 	/*input checks*/
 	if (ac == 0 || av == NULL)
@@ -35,14 +35,14 @@ char *argstostr(int ac, char **av)
 	if (array == NULL)
 		return (NULL);
 
-	/*copies av into 1d array*/ 
+	/*copies av into 1d array*/
 	c = 0;
 	for (a = 0; a < ac; a++)
 	{
-		for (b = 0; av[a][b] != '\0'; b++,c++)
+		for (b = 0; av[a][b] != '\0'; b++, c++)
 			array[c] = av[a][b];
 		array[c] = '\n';
 		c++;
-	} 
+	}
 	return (array);
 }
