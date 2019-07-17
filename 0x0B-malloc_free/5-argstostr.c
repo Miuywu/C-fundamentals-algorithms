@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 	}
 
 	/*malloc*/
-	array = malloc(c + 1 * (sizeof(char *)));
+	array = malloc(c + 1 * (sizeof(char)));
 
 	/*malloc check*/
 	if (array == NULL)
