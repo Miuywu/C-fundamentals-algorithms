@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 #include <stdio.h>
-
+  
 /**
  * array_range - creates an array of integers.
  *
@@ -13,16 +13,16 @@
 int *array_range(int min, int max)
 {
 	int *p;/*store malloc output*/
-	int a, b;/*loopers*/
+	int a, b, counter;/*loopers*/
 
 	/*input check*/
 	if (min > max)
 		return (NULL);
 	/*len of final str*/
 	for (a = min; a <= max; a++)
-		;
+		counter++;
 	/*malloc*/
-	p = malloc(a * sizeof(int));
+	p = malloc(counter * sizeof(int));
 
 	/*malloc check*/
 	if (p == NULL)
