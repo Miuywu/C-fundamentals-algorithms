@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 #include <stdio.h>
-char *_memset(char *s, char b, unsigned int n);
+
 /**
  * *_memset - fills mem with a constant byte
  *
@@ -29,12 +29,12 @@ char *_memset(char *s, char b, unsigned int n)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *p;/*store malloc output*/
-	
+
 	/*inputs check*/
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	/*malloc*/
-	p = malloc(nmemb * size); 
+	p = malloc(nmemb * size);
 	/*malloc check*/
 	if (p == NULL)
 		return (NULL);
