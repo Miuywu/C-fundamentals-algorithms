@@ -39,8 +39,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/*copy name and owner into new dog*/
 	for (a = 0; name[a]; a++)
 		n_name[a] = name[a];
+	n_name[a] = '\0';/*null byte*/
 	for (a = 0; owner[a]; a++)
 		n_owner[a] = owner[a];
+	n_owner[a] = '\0';/*null*/
 	/*n_dog*/
 	(*n_dog).name = n_name;
 	(*n_dog).owner = n_owner;
