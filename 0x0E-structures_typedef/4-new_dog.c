@@ -7,7 +7,7 @@
  * @name: n
  * @age: a
  * @owner: o
- *
+ * Return: pointer to new dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -16,16 +16,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int a, nLen, oLen;
 	char *n_name;
 	char *n_owner;
-	 
-	/*len count*/
+
 	for (nLen = 0; name[nLen]; nLen++)
 		;
 	for (oLen = 0; owner[oLen]; oLen++)
 		;
-	/*input checks*/
 	if (name == NULL || owner == NULL)
 		return (NULL);
-	/*malloc new space*/
 	n_dog = malloc(sizeof(dog_t));
 	n_name = malloc(nLen + 1);
 	n_owner = malloc(oLen + 1);
@@ -33,9 +30,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (n_dog == NULL)
 		return (NULL);
 	if (n_name == NULL)
+	{
+		free(n_dog);
 		return (NULL);
+	}
 	if (n_owner == NULL)
+	{
+		free(n_name);
+		free(n_dog);
 		return (NULL);
+	}
 	/*copy name and owner into new dog*/
 	for (a = 0; name[a]; a++)
 		n_name[a] = name[a];
