@@ -26,10 +26,10 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	if (argv[2][1] != '\0')
-        {
-                printf("Error\n");
-                exit(99);
-        }
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	printf("%d\n", (*get_op_func)(argv[2])(a, b));
 	return (0);
 }
