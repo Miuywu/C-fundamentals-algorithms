@@ -5,7 +5,7 @@
 /**
  * print_numbers - prints all its parameters
  * @n: n
- *
+ * @separator: s
  * Return: int
  */
 
