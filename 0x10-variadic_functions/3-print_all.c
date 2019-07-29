@@ -1,47 +1,49 @@
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
- * pchar - calls function
+ * op_char - calls function
  * @list: string struct
  *
  * Return: 0
  */
-void pchar(va_list list)
+void op_char(va_list list)
 {
 	printf("%c", va_arg(list,  int));
 }
 /**
- * pint - calls function
+ * op_int - calls function
  * @list: string struct
  *
  * Return: 0
  */
-void pint(va_list list)
+void op_int(va_list list)
 {
 	printf("%d", va_arg(list, int));
 }
 /**
- * pfloat - calls function
+ * op_float - calls function
  * @list: string struct
  *
  * Return: 0
  */
-void pfloat(va_list list)
+void op_float(va_list list)
 {
 	printf("%f", va_arg(list, double));
 }
 /**
- * pstr - calls function
+ * op_char_ptr - calls function
  * @list: string struct
  *
  * Return: 0
  */
-void pstr(va_list list)
+void op_char_ptr(va_list list)
 {
-	char *s;
+	char *str;
 
-	s = va_arg(list, char *);
-	if (s == NULL)
+	str = va_arg(list, char *);
+	if (str == NULL)
 	{
 		printf("(nil)");
 		return;
@@ -56,38 +58,37 @@ void pstr(va_list list)
  */
 void print_all(const char * const format, ...)
 {
-	int a;
-	int b;
-	char *spr = "";
-
-	va_list args;
+	int i;
+	int j;
+	char *separator = "";
+	va_list list;
 
 	op_t f_ops[] = {
-		{"c", pchar},
-		{"i", pint},
-		{"f", pfloat},
-		{"s", pstr},
+		{"c", op_char},
+		{"i", op_int},
+		{"f", op_float},
+		{"s", op_char_ptr},
 		{NULL, NULL}
 	};
-	a = 0;
 
-	va_start(args, format);
-
-	while (format && format[a])
+	va_start(list, format);
+	i = 0;
+	j = 0;
+	while (format && format[i])
 	{
-		while (f_ops[b].c)
+		while (f_ops[j].c)
 		{
-			if (*f_ops[b].c == format[a])
+			if (*f_ops[j].c == format[i])
 			{
-				printf("%s", spr);
-				f_ops[j].ch(args);
-				spr = ", ";
+				printf("%s", separator);
+				f_ops[j].ch(list);
+				separator = ", ";
 			}
 			j++;
 		}
-		b = 0;
-		a++;
+		j = 0;
+		i++;
 	}
 	printf("\n");
-	va_end(args);
+	va_end(list);
 }
