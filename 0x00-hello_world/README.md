@@ -16,6 +16,7 @@ To use the bash scripts and C files:
 4. hit enter key
 
 for C files:
+
 0. gcc <filename.c>
 1. ./a.out
 
