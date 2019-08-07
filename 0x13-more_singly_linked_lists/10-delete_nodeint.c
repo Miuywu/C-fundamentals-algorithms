@@ -19,15 +19,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(cpy);
 		return (1);
 	}
-/*	if (index == 1)
-	{
-		cpy = (*head)->next;
-		free(cpy);
-		return (1);
-		}*/
-	for (curr = *head; index > 1; index--)
+	for (curr = *head; index > 1 && curr->next; index--)
 		curr = curr->next;
-	if (!curr && index > 1)
+	if (!(curr->next) && index > 1)
 		return (-1);
 	cpy = curr->next;
 	curr->next = curr->next->next;
