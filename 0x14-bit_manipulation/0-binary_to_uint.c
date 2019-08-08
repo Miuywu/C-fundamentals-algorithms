@@ -31,7 +31,7 @@ unsigned int binary_to_uint(const char *b)
 		len++;
 	}
 	len--;
-	printf("run %d times.\n", len);
+
 	for (a = 0; len >= 0; a++, len--)
 	{
 		if (b[len] == '1')
