@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _pow_recursion - raises x to power of y
+ * pow_r - raises x to power of y
  * Return: int factorial of a given number
  * @x: intput
  * @y: power
@@ -22,9 +22,11 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int converted = 0;
 	int a = 0, len = 0;
 
-	while (*b == '0')
-		b++;
-	while (b[len])
+	if (!b)
+		return (0);
+/*	while (*b == '0')
+ *		b++;
+ */	while (b[len])
 	{
 		if (b[len] > '9' || b[len] < '0')
 			return (0);
