@@ -24,9 +24,9 @@ unsigned int binary_to_uint(const char *b)
 
 	if (!b)
 		return (0);
-/*	while (*b == '0')
- *		b++;
- */	while (b[len])
+	while (*b == '0')
+		b++;
+	while (b[len])
 	{
 		if (b[len] > '9' || b[len] < '0')
 			return (0);
