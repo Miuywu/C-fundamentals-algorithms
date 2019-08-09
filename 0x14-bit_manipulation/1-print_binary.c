@@ -11,13 +11,13 @@ void print_binary(unsigned long int n)
 
 	if (!n)
 	{
-		printf("\nran %d times.\n", len);
+/*		printf("\nran %d times.\n", len);*/
 		_putchar('0');
 		return;
 	}
-	len = sizeof(n)* 8 - 1;
+	len = sizeof(n) * 8 - 1;
 	mark = 0;
-	printf("\nran %d times.\n", len);
+/*	printf("\nran %d times.\n", len);*/
 	while (len >= 0)
 	{
 		r_sh = n >> len;
