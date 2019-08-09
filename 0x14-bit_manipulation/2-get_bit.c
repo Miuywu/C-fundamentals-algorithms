@@ -2,6 +2,7 @@
 /**
  * get_bit - prints binary ver of decimal num
  * @n: n
+ * @index: pos
  * Return: void
  */
 int get_bit(unsigned long int n, unsigned int index)
