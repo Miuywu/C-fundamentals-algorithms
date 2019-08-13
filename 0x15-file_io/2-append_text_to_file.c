@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * create_file - creates a file
+ * append_text_to_file - creates a file
  * @filename: txt file
  * @text_content: chars in file
  * Return: 0
@@ -19,11 +19,11 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	for (value = 0; *filespace != '\0'; value++, filespace++)
 		;
-	if (text_content == NULL)
+	if (!text_content)
 	{
 		if (!filename)
 			return (1);
-		else
+		else if (filename)
 			return (-1);
 	}
 	check = write(fd, text_content, value);
