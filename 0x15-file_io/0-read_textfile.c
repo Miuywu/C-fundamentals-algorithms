@@ -9,12 +9,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *filespace;
-	int value;
-	int check;
+	int value, check;
 
 	if (!filename)
 		return (0);
-	filespace = malloc((letters) * sizeof(char));
+	filespace = malloc(letters * sizeof(char));
 
 	if (!filespace)
 		return (0);
@@ -26,13 +25,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	value = read(fd, filespace, letters);
-	if (value == -1)
-	{
-		free(filespace);
-		return (0);
-	}
 	check = write(2, filespace, value);
-	if (check == -1)
+	if (check == -1 || check != value)
 	{
 		free(filespace);
 		return (0);
