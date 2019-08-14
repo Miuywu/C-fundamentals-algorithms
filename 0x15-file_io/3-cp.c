@@ -1,5 +1,20 @@
 #include "holberton.h"
 /**
+ * closeh - v
+ * @fd: f
+ * @clz: c
+ */
+void closeh(int fd, int clz)
+{
+	char *err3 = "Error: Can't close fd ";
+
+	if (clz == -1)
+	{
+		dprintf(STDERR_FILENO, "%s%d\n", err3, fd);
+		exit(100);
+	}
+}
+/**
  * main - creates a file
  * @argc: arg count
  * @argv: files
@@ -7,7 +22,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd, check, value, fd2;
+	int fd, check, value, fd2, clz;
 	char arr[1024];
 	char *err1 = "Error: Can't read from file ";
 	char *err2 = "Error: Can't write to ";
@@ -32,17 +47,20 @@ int main(int argc, char *argv[])
 	value = read(fd, arr, 1024);
 	if (value == -1)
 	{ /*works*/
-		close(fd);
+		clz = close(fd);
+		closeh(fd, clz);
 		dprintf(STDOUT_FILENO, "%s%s\n", err1, argv[1]);
 		exit(98);
 	} /*WRITE*/
 	check = write(fd2, arr, value);
 	if (check == -1)
 	{ /*works*/
-		close(fd2);
+		clz = close(fd2);
+		closeh(fd2, clz);
 		dprintf(STDOUT_FILENO, "%s%s\n", err2, argv[2]);
 		exit(99);
 	}
-	close(fd);
+	clz = close(fd);
+	closeh(fd, clz);
 	return (0);
 }
