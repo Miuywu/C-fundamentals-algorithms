@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		dprintf(STDOUT_FILENO, "%s%s\n", err1, argv[1]);
 		exit(98);
 	} /*WRITE*/
-	check = write(fd2, arr, 1024);
+	check = write(fd2, arr, value);
 	if (check == -1)
 	{ /*works*/
 		close(fd2);
