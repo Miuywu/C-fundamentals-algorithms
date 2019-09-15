@@ -4,7 +4,7 @@
  * @head: h
  * Return: size_t - number of nodes
  */
-int sum_listint(dlistint_t *head)
+int sum_dlistint(dlistint_t *head)
 {
 	int sum;
 	dlistint_t *curr = head;
