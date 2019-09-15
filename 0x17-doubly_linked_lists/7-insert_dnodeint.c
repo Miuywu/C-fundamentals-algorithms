@@ -4,7 +4,7 @@
  * insert_dnodeint_at_index - inserts a new node at a given position
  * @n: h
  * @idx: input
- * @head: h
+ * @h: h
  * Return: comment
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -36,5 +36,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->next = cpy->next;
 	new->prev = cpy;
 	cpy->next = new;
+	if (new->next)
+		new->next->prev = new;
 	return (new);
 }
