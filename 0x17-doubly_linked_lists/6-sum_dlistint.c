@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * sum_dlistint - returns the sum of all the data (n) of a listint_t linked list
+ * sum_dlistint - finds the sum of all the data (n) of a listint_t linked list
  * @head: h
  * Return: size_t - number of nodes
  */
