@@ -28,8 +28,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strcpy(new->key, key);
 	new->value = strcpy(new->value, value);
 
-	for (end = ht->array[i]; end->next; end = end->next)
-		;
+	for (end = ht->array[i];; end = end->next)
+	{
+		if (strcmp(end->key, key) == 0)
+		{
+			new->next = ht->array[i];
+			ht->array[i] = new;
+			return (1);
+		}
+		if (new->next == NULL)
+			break;
+	}
 	end->next = new;
 	new->next = NULL;
 	return (1);
