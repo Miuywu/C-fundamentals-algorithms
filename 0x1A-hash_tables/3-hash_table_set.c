@@ -11,7 +11,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned char *k_key;
 	unsigned long int i, size;
-	hash_node_t *new;
+	hash_node_t *new, *end;
 
 	if (ht || key || value)
 		return (0);
@@ -28,7 +28,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strcpy(new->key, key);
 	new->value = strcpy(new->value, value);
 
-	new->next = ht->array[i];
-	ht->array[i] = new;
+	for (end = ht->array[i]; end->next; end = end->next)
+		;
+	end->next = new;
+	new->next = NULL;
 	return (1);
 }
