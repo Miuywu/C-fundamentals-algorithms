@@ -13,12 +13,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int i, size;
 	hash_node_t *new, *end;
 
-	if (ht || key || value)
+	if (!ht || !key || !value || !*key)
 		return (0);
-	k_key = (unsigned char *)key;
-	size = ht->size;
 
-	i = key_index(k_key, size);
+	i = key_index(k(unsigned char *)key, ht->size);
 	if (i > sizeof(ht->array) / sizeof(hash_node_t *))
 		return (0);
 
