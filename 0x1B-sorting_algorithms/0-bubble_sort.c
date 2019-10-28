@@ -1,5 +1,5 @@
 #include "sort.h"
-/*
+/**
  * bubble_sort - implementation of the basic bubble sort
  * @array: elements to be sorted
  * @size: length of array
@@ -10,6 +10,8 @@ void bubble_sort(int *array, size_t size)
 	size_t sorted = 0, a, b;
 	int lesser;
 
+	if (array == NULL || size < 2)
+		sorted = 1;
 	while (sorted != 1)
 	{
 		for (a = 0, b = 1; a < size - 1; a++, b++)
