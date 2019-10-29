@@ -2,32 +2,33 @@
 /**
  * insertion_sort_list - insertion sort implementation
  * @list: linked list of values for sorting
+ * Return: void
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = *list, *current_next = *list;
+	listint_t *curr, *after;
 
-	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
+	if (!list || !*list || !((*list)->next))
 		return;
-
-	while (current_next != NULL)
+	for (curr = *list, after = curr; after;)
 	{
-		current_next = current_next->next;
-		while (current->prev != NULL && current->n < current->prev->n)
+		after = after->next;
+		while (curr->prev && curr->n < curr->prev->n)
 		{
-			current->prev->next = current->next;
-			if (current->next != NULL)
-				current->next->prev = current->prev;
-			current->next = current->prev;
-			current->prev = current->next->prev;
-			current->next->prev = current;
-			if (current->prev == NULL)
-				*list = current;
+			curr->prev->next = curr->next;
+			if (curr->next)
+				curr->next->prev = curr->prev;
+			curr->next = curr->prev;
+			curr->prev = curr->next->prev;
+			curr->next->prev = curr;
+
+			if (curr->prev == NULL)
+				*list = curr;
 			else
-				current->prev->next = current;
+				curr->prev->next = curr;
+
 			print_list(*list);
 		}
-		current = current_next;
+		curr = after;
 	}
-
 }
