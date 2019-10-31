@@ -9,16 +9,16 @@ int lomuto(int *arr, size_t s, int start, int end);
  */
 void quick_sort(int *array, size_t size)
 {
-        int start = 0, end = size - 1;
+	int start = 0, end = size - 1;
 
-        if (!array || !*array || size < 2)
-                return;
-        recurser(array, size, start, end);
+	if (!array || !*array || size < 2)
+		return;
+	recurser(array, size, start, end);
 }
 /**
  * recurser - recursively calls to the lomuto partitioner
  * @arr: array of ints to be sorted
- * @size: length of array
+ * @s: length of array
  * @start: starting index of array
  * @end: ending index of array
  * Return: void
@@ -37,7 +37,7 @@ void recurser(int *arr, size_t s, int start, int end)
 /**
  * lomuto - splits array into one array of < pivot and the other > pivot
  * @arr: array of ints to be sorted
- * @size: length of array
+ * @s: length of array
  * @start: starting index of array
  * @end: ending index of array
  * Return: new sort starting point
