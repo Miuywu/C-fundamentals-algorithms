@@ -33,28 +33,26 @@ int i_binary_tree_preorder(const binary_tree_t *tree, int flag)
 
 	if (!tree)
 		return (flag);
-	if (flag > 1)
+	if (flag == 2)
 		return (2);
 	flag1 = i_binary_tree_preorder(tree->left, flag);
 	if (flag1 == -1)
-                return (-1);
+		return (-1);
+	if (flag1 > 1)
+		return (2);
 	flag1 += i_binary_tree_preorder(tree->right, flag);
 	if (flag1 == -1)
 		return (-1);
-	balance = i_binary_tree_balance(tree);
-        if (balance < 0)
-        {
-                flag = -1;
-                return (-1);
-        }
-        if (balance > 1)
-        {
-                flag = 2;
-                return (2);
-        }
-        flag += balance;
-/*	printf("(%d) f1 %d | FLAG %d\n", tree->n, flag1, flag);*/
 	if (flag1 > 1)
+		return (2);
+	balance = i_binary_tree_balance(tree);
+	if (balance < 0)
+		return (-1);
+	if (balance > 1)
+		return (2);
+	flag += balance;
+/*	printf("(%d) f1 %d | FLAG %d\n", tree->n, flag1, flag);*/
+	if (flag > 1)
 		return (2);
 	return (flag); /*1 or 0*/
 }
