@@ -15,7 +15,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 	finalbalance = i_binary_tree_preorder(tree, 0);
-	printf("final = %d\n", finalbalance);
+/*	printf("final = %d\n", finalbalance);*/
 
 	if (finalbalance < 2 && finalbalance > -1)
 		return (1);
@@ -45,7 +45,7 @@ int i_binary_tree_preorder(const binary_tree_t *tree, int flag)
 	if (flag1 > 0 || flag2 > 0)
 		return (-1);
 	flag += flag1 + flag2;
-	printf("(%d) f1 %d | f2 %d | FLAG %d\n", tree->n, flag1, flag2, flag);
+/*	printf("(%d) f1 %d | f2 %d | FLAG %d\n", tree->n, flag1, flag2, flag);*/
 	if (flag == -1)
 		return (-1);
 	if (flag > 1)
