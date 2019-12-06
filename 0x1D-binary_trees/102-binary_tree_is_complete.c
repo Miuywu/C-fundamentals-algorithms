@@ -15,7 +15,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 	finalbalance = i_binary_tree_preorder(tree, 0);
-	printf("final = %d\n", finalbalance);
+/*	printf("final = %d\n", finalbalance);*/
 
 	if (finalbalance < 2 && finalbalance > -1)
 		return (1);
@@ -43,7 +43,7 @@ int i_binary_tree_preorder(const binary_tree_t *tree, int flag)
 	if (flag1 == -1)
 		return (-1);
 	balance = i_binary_tree_balance(tree);
-	printf("(%d) balance %d\n", tree->n, balance);
+/*	printf("(%d) balance %d\n", tree->n, balance);*/
 	if (balance == -1)
 		return (-1);
 
