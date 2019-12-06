@@ -15,7 +15,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 	finalbalance = i_binary_tree_preorder(tree, 0);
-/*	printf("final = %d\n", finalbalance);*/
+	printf("final = %d\n", finalbalance);
 
 	if (finalbalance < 2 && finalbalance > -1)
 		return (1);
@@ -33,28 +33,25 @@ int i_binary_tree_preorder(const binary_tree_t *tree, int flag)
 
 	if (!tree)
 		return (flag);
+/*	printf("(%d) | FLAG %d\n", tree->n, flag);*/
 	if (flag == 2)
 		return (2);
 	flag1 = i_binary_tree_preorder(tree->left, flag);
 	if (flag1 == -1)
 		return (-1);
-	if (flag1 > 1)
-		return (2);
 	flag1 += i_binary_tree_preorder(tree->right, flag);
 	if (flag1 == -1)
 		return (-1);
-	if (flag1 > 1)
-		return (2);
 	balance = i_binary_tree_balance(tree);
-	if (balance < 0)
+	printf("(%d) balance %d\n", tree->n, balance);
+	if (balance == -1)
 		return (-1);
-	if (balance > 1)
-		return (2);
+
 	flag += balance;
-/*	printf("(%d) f1 %d | FLAG %d\n", tree->n, flag1, flag);*/
+/**/
 	if (flag > 1)
 		return (2);
-	return (flag); /*1 or 0*/
+	return (flag - flag1); /*1 or 0*/
 }
 /**
  * i_binary_tree_balance - Measures the balance factor of a binary tree.
