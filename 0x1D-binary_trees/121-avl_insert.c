@@ -1,5 +1,10 @@
 #include "binary_trees.h"
 #include <stdlib.h>
+/**
+ * height - measures height of avl_t
+ * @tree: root of avl_t tree
+ * Return: height
+ */
 int height(avl_t *tree)
 {
 	int height_l;
@@ -10,6 +15,11 @@ int height(avl_t *tree)
 
 	return (height_l > height_r ? height_l : height_r);
 }
+/**
+ * right_rotate - rotates right
+ * @y: node to rotate around
+ * Return: pointer to created node
+ */
 avl_t *right_rotate(avl_t *y)
 {
 	avl_t *new = y->left, *T2 = new->right;
@@ -20,6 +30,11 @@ avl_t *right_rotate(avl_t *y)
 	/* Return new root*/
 	return (new);
 }
+/**
+ * left_rotate - rotates left
+ * @x: node to rotate around
+ * Return: pointer to created node
+ */
 avl_t *left_rotate(avl_t *x)
 {
 	avl_t *new = x->right, *T2 = new->left;
@@ -30,6 +45,11 @@ avl_t *left_rotate(avl_t *x)
 	/* Return new root*/
 	return (new);
 }
+/**
+ * avl_balance - balance but for avl
+ * @tree: double pointer to root of avl tree
+ * Return: int balance
+ */
 int avl_balance(avl_t *tree)
 {
 	if (!tree)
