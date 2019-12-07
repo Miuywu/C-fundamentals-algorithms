@@ -20,14 +20,14 @@ unsigned int countNodes(const binary_tree_t *tree)
  * Return: If the tree is complete (1) or (0).
  */
 int isCompleteUtil(const binary_tree_t *tree, unsigned int index,
-	unsigned int number_nodes)
+		   unsigned int number_nodes)
 {
 	if (tree == NULL)
 		return (1);
 	if (index >= number_nodes)
 		return (0);
 	return (isCompleteUtil(tree->left, 2 * index + 1, number_nodes) &&
-	isCompleteUtil(tree->right, 2 * index + 2, number_nodes));
+		isCompleteUtil(tree->right, 2 * index + 2, number_nodes));
 }
 
 /**
@@ -54,10 +54,9 @@ int isHeapUtil(const binary_tree_t *tree)
  */
 int binary_tree_is_heap(const binary_tree_t *tree)
 {
-	unsigned int node_count = countNodes(tree);
-	unsigned int index = 0;
-
-	if (isCompleteUtil(tree, index, node_count) && isHeapUtil(tree))
+	if (!tree)
+		return (0);
+	if (isCompleteUtil(tree, o, countNodes(tree)) && isHeapUtil(tree))
 		return (1);
 	return (0);
 }
