@@ -16,7 +16,7 @@ int jump_search(int *array, size_t size, int value)
 		return (-1);
 	sint = (int)size;
 	root = (int)sqrt(sint);
-	for (a = 0; a <= sint; a += root)
+	for (a = 0; a < sint; a += root)
 	{
 		if (array[a] >= value)
 		{
