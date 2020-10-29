@@ -1,5 +1,6 @@
 This repo stored programs written while learning the fundamentals of low-level programming in C.
 
+Here's a screenshot of my binary search C program compiled and ran in a Linux Environment.
 ![Simple Shell executing "ls -la"](https://github.com/Miuywu/C-fundamentals-algorithms/blob/master/binary.PNG "Screenshot")
 
 ## About me
